@@ -21,7 +21,7 @@ pipeline {
 
         stage('Linter & Security') {
             steps {
-                // Hadolint და Trivy-ს შემოწმება (თუ დააყენე სერვერზე)
+        
                 sh 'hadolint Dockerfile || echo "Hadolint skip"'
                 sh "trivy image ${DOCKER_USER}/${IMAGE_NAME}:v1.0 || echo 'Trivy skip'"
             }
