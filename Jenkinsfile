@@ -9,7 +9,7 @@ pipeline {
         // ბრენჩის მიხედვით ვსაზღვრავთ პორტს და იმიჯის სახელს
         APP_PORT = "${BRANCH_NAME == 'main' ? '3001' : '3002'}"
         IMAGE_NAME = "${BRANCH_NAME == 'main' ? 'nodemain' : 'nodedev'}"
-        DOCKER_USER = "revazkukhianidze"
+        DOCKER_USER = "revazikukhianidze"
     }
 
     stages {
