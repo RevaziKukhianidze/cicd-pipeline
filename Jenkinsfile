@@ -53,7 +53,7 @@ pipeline {
                     sh "docker ps -q --filter 'name=app-${BRANCH_NAME}' | xargs -r docker stop"
                     sh "docker ps -aq --filter 'name=app-${BRANCH_NAME}' | xargs -r docker rm"
                     // ვუშვებთ ახალს შესაბამის პორტზე
-                    sh "docker run -d --name app-${BRANCH_NAME} -p ${APP_PORT}:${APP_PORT} ${DOCKER_USER}/${IMAGE_NAME}:v1.0"
+                    sh "docker run -d --name app-${BRANCH_NAME} -p ${APP_PORT}:3000 ${DOCKER_USER}/${IMAGE_NAME}:v1.0"
                 }
             }
         }
